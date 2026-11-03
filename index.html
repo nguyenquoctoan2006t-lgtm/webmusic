@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicFlow - Trải nghiệm Âm nhạc Đỉnh cao</title>
+    <!-- Google Fonts: Outfit for titles, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- BACKGROUND DYNAMIC GLOWS -->
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-glow bg-glow-3"></div>
+
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <span class="logo-text">Sonic<span>Flow</span></span>
+            </div>
+
+            <nav class="nav-menu">
+                <p class="menu-label">Menu Chính</p>
+                <ul>
+                    <li class="nav-item active" data-tab="discover">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Khám Phá</span>
+                    </li>
+                    <li class="nav-item" data-tab="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Tìm Kiếm</span>
+                    </li>
+                    <li class="nav-item" data-tab="visualizer">
+                        <i class="fa-solid fa-wave-square"></i>
+                        <span>Sóng Nhạc visualizer</span>
+                    </li>
+                </ul>
+
+                <p class="menu-label">Cá Nhân</p>
+                <ul>
+                    <li class="nav-item" data-tab="favorites">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Yêu Thích</span>
+                    </li>
+                    <li class="nav-item" data-tab="playlists">
+                        <i class="fa-solid fa-music"></i>
+                        <span>Danh Sách Phát</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="assets/images/cyberpunk.png" alt="User Avatar" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Premium Member</span>
+                        <span class="user-status"><i class="fa-solid fa-circle-check"></i> Pro Audio</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN DASHBOARD CONTENT -->
+        <main class="main-content">
+            <!-- HEADER BAR -->
+            <header class="main-header">
+                <div class="search-bar-header">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="header-search-input" placeholder="Tìm bài hát, nghệ sĩ hoặc thể loại...">
+                </div>
+                <div class="header-actions">
+                    <button class="visualizer-toggle-btn" title="Phòng Sóng Nhạc Neon">
+                        <i class="fa-solid fa-circle-nodes"></i> Visualizer Mode
+                    </button>
+                    <button class="lyrics-toggle-btn" title="Bật/Tắt Lời Bài Hát">
+                        <i class="fa-solid fa-quote-right"></i> Lời Bài Hát
+                    </button>
+                </div>
+            </header>
+
+            <!-- TABS CONTAINER -->
+            <div class="tab-content-container">
+                <!-- 1. DISCOVER TAB -->
+                <section id="tab-discover" class="tab-pane active">
+                    <!-- HERO FEATURED BANNER -->
+                    <div class="featured-banner">
+                        <div class="banner-content">
+                            <span class="badge"><i class="fa-solid fa-fire"></i> Đang Thịnh Hành</span>
+                            <h1 id="featured-title">Cyberpunk Synthwave</h1>
+                            <p id="featured-desc">Hòa mình vào không gian tương lai ảo diệu với những giai điệu điện tử đầy mê hoặc, tiết tấu mạnh mẽ đầy thôi thúc.</p>
+                            <div class="banner-actions">
+                                <button class="btn-primary" id="play-featured-btn">
+                                    <i class="fa-solid fa-play"></i> Phát Ngay
+                                </button>
+                                <button class="btn-secondary" id="fav-featured-btn">
+                                    <i class="fa-regular fa-heart"></i> Lưu Lại
+                                </button>
+                            </div>
+                        </div>
+                        <div class="banner-image-container">
+                            <img src="assets/images/synthwave.png" alt="Featured Album Cover" id="featured-img" class="banner-img">
+                            <div class="banner-img-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- TRENDING SONGS SECTION -->
+                    <div class="section-container">
+                        <div class="section-header">
+                            <h2 class="section-title">Xu Hướng Âm Nhạc</h2>
+                            <span class="section-subtitle">Danh sách những bài hát được nghe nhiều nhất tuần này</span>
+                        </div>
+                        <div class="songs-grid" id="trending-songs-grid">
+                            <!-- JS will inject songs dynamically here -->
+                        </div>
+                    </div>
+
+                    <!-- FEATURED ARTISTS SECTION -->
+                    <div class="section-container">
+                        <div class="section-header">
+                            <h2 class="section-title">Nghệ Sĩ Nổi Bật</h2>
+                            <span class="section-subtitle">Lắng nghe những cá tính âm nhạc độc đáo</span>
+                        </div>
+                        <div class="artists-grid">
+                            <div class="artist-card">
+                                <div class="artist-avatar-container">
+                                    <img src="assets/images/cyberpunk.png" alt="Hyperion" class="artist-avatar">
+                                    <div class="artist-play-overlay"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="artist-name">Hyperion</span>
+                                <span class="artist-role">Synthwave Producer</span>
+                            </div>
+                            <div class="artist-card">
+                                <div class="artist-avatar-container">
+                                    <img src="assets/images/lofi.png" alt="Chilly Kitten" class="artist-avatar">
+                                    <div class="artist-play-overlay"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="artist-name">Chilly Kitten</span>
+                                <span class="artist-role">Lo-Fi Master</span>
+                            </div>
+                            <div class="artist-card">
+                                <div class="artist-avatar-container">
+                                    <img src="assets/images/synthwave.png" alt="GridLock" class="artist-avatar">
+                                    <div class="artist-play-overlay"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="artist-name">GridLock</span>
+                                <span class="artist-role">Cyberpunk Beatmaker</span>
+                            </div>
+                            <div class="artist-card">
+                                <div class="artist-avatar-container">
+                                    <img src="assets/images/cyberpunk.png" alt="Cosmo" class="artist-avatar">
+                                    <div class="artist-play-overlay"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                                <span class="artist-name">Cosmo</span>
+                                <span class="artist-role">Ambient Wizard</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. SEARCH TAB -->
+                <section id="tab-search" class="tab-pane">
+                    <div class="search-tab-container">
+                        <div class="search-header-tab">
+                            <h2>Tìm Kiếm Âm Nhạc</h2>
+                            <p>Khám phá kho nhạc demo chất lượng cao ngay lập tức</p>
+                            <div class="search-input-wrapper">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="main-search-input" placeholder="Tên bài hát, ca sĩ, thể loại nhạc...">
+                            </div>
+                        </div>
+
+                        <div class="search-results-section">
+                            <h3 class="search-results-title" id="search-title">Gợi ý tìm kiếm</h3>
+                            <div class="list-layout" id="search-results-list">
+                                <!-- JS will dynamic populate here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. VISUALIZER TAB -->
+                <section id="tab-visualizer" class="tab-pane">
+                    <div class="visualizer-tab-container">
+                        <div class="visualizer-header">
+                            <h2>Phòng Sóng Nhạc Neon (Visualizer Room)</h2>
+                            <p>Xem luồng sóng âm sinh động phản hồi theo thời gian thực dựa trên tần số bài hát đang phát.</p>
+                        </div>
+
+                        <div class="canvas-wrapper">
+                            <canvas id="visualizer-canvas"></canvas>
+                            
+                            <!-- Visualizer Mode Controls -->
+                            <div class="visualizer-modes">
+                                <button class="viz-mode-btn active" data-mode="bars">
+                                    <i class="fa-solid fa-chart-simple"></i> Cột Sóng Neon
+                                </button>
+                                <button class="viz-mode-btn" data-mode="wave">
+                                    <i class="fa-solid fa-wave-square"></i> Sóng Hình Sin
+                                </button>
+                                <button class="viz-mode-btn" data-mode="circle">
+                                    <i class="fa-solid fa-circle-dot"></i> Đĩa Nhạc Xoay Neon
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="visualizer-instruction">
+                            <i class="fa-solid fa-info-circle"></i>
+                            <span>Nhấn **Phát Nhạc** ở bất cứ bài hát nào và chuyển sang tab này để thưởng thức màn biểu diễn ánh sáng neon đồng bộ theo nhịp điệu.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. FAVORITES TAB -->
+                <section id="tab-favorites" class="tab-pane">
+                    <div class="favorites-tab-container">
+                        <div class="favorites-banner">
+                            <div class="fav-banner-icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div class="fav-banner-text">
+                                <h2>Bài Hát Đã Thích</h2>
+                                <p id="fav-count-label">Chưa có bài hát yêu thích nào</p>
+                            </div>
+                        </div>
+
+                        <div class="list-layout" id="favorites-list">
+                            <!-- JS will inject favorites list here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. PLAYLISTS TAB -->
+                <section id="tab-playlists" class="tab-pane">
+                    <div class="playlists-tab-container">
+                        <div class="playlists-sidebar-layout">
+                            <div class="playlists-left-panel">
+                                <div class="panel-header-row">
+                                    <h3>Danh Sách Phát Của Bạn</h3>
+                                    <button class="create-playlist-btn" id="show-create-playlist-modal-btn">
+                                        <i class="fa-solid fa-plus"></i> Tạo Mới
+                                    </button>
+                                </div>
+                                <div class="playlist-cards-list" id="playlists-navigation-list">
+                                    <!-- JS will inject playlist items -->
+                                </div>
+                            </div>
+                            <div class="playlists-right-panel" id="playlist-detail-panel">
+                                <div class="playlist-empty-state" id="playlist-empty-state">
+                                    <i class="fa-solid fa-music"></i>
+                                    <h4>Chưa chọn danh sách phát</h4>
+                                    <p>Chọn một danh sách phát bên trái hoặc tạo danh sách phát mới để sắp xếp âm nhạc theo cách riêng.</p>
+                                </div>
+                                <div class="playlist-detail-content hidden" id="playlist-detail-content">
+                                    <div class="playlist-detail-header">
+                                        <div class="playlist-detail-img">
+                                            <i class="fa-solid fa-music-note"></i>
+                                        </div>
+                                        <div class="playlist-detail-info">
+                                            <span class="playlist-label">PLAYLIST</span>
+                                            <h2 id="playlist-detail-name">Tên Danh Sách Phát</h2>
+                                            <p id="playlist-detail-meta">0 bài hát</p>
+                                            <div class="playlist-actions">
+                                                <button class="btn-primary" id="play-entire-playlist-btn">
+                                                    <i class="fa-solid fa-play"></i> Phát Tất Cả
+                                                </button>
+                                                <button class="btn-danger" id="delete-playlist-btn">
+                                                    <i class="fa-solid fa-trash"></i> Xóa Playlist
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-layout" id="playlist-tracks-list">
+                                        <!-- JS will inject playlist tracks here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- LYRICS SLIDEOUT PANEL (RIGHT SIDE) -->
+        <aside class="lyrics-panel" id="lyrics-panel">
+            <div class="lyrics-panel-header">
+                <h3><i class="fa-solid fa-quote-left"></i> Lời Bài Hát</h3>
+                <button class="close-lyrics-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="lyrics-panel-song-info">
+                <img src="assets/images/synthwave.png" alt="Current Cover" class="lyrics-song-cover">
+                <div class="lyrics-song-details">
+                    <h4 class="lyrics-song-title">Tên Bài Hát</h4>
+                    <p class="lyrics-song-artist">Ca Sĩ</p>
+                </div>
+            </div>
+            <div class="lyrics-container" id="lyrics-container">
+                <div class="lyrics-empty-state">
+                    <p>Chọn một bài hát để xem lời ca đồng bộ thời gian thực nhé.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- PERSISTENT MUSIC PLAYER BOTTOM BAR -->
+        <footer class="player-bar">
+            <!-- Left Info Section -->
+            <div class="player-left">
+                <div class="song-info-card">
+                    <div class="cover-container">
+                        <img src="assets/images/synthwave.png" alt="Current Song Art" class="player-cover" id="player-cover">
+                        <div class="vinyl-disc" id="vinyl-disc"></div>
+                    </div>
+                    <div class="song-details">
+                        <span class="song-title" id="player-title">Chưa có bài hát</span>
+                        <span class="song-artist" id="player-artist">Chọn bài từ danh sách</span>
+                    </div>
+                </div>
+                <button class="favorite-toggle-btn" id="player-fav-btn" title="Thêm vào danh sách yêu thích">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="add-to-playlist-trigger" id="player-playlist-btn" title="Thêm vào Danh Sách Phát">
+                    <i class="fa-solid fa-plus-square"></i>
+                </button>
+            </div>
+
+            <!-- Center Controls & Seekbar -->
+            <div class="player-center">
+                <div class="controls-buttons">
+                    <button class="ctrl-btn" id="btn-shuffle" title="Trộn bài"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="ctrl-btn" id="btn-prev" title="Bài trước"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="ctrl-btn ctrl-btn-play" id="btn-play-pause" title="Phát / Tạm dừng">
+                        <i class="fa-solid fa-play play-icon"></i>
+                    </button>
+                    <button class="ctrl-btn" id="btn-next" title="Bài tiếp theo"><i class="fa-solid fa-forward-step"></i></button>
+                    <button class="ctrl-btn" id="btn-repeat" title="Lặp lại"><i class="fa-solid fa-repeat"></i></button>
+                </div>
+                <div class="timeline-container">
+                    <span class="time-label" id="current-time">0:00</span>
+                    <div class="timeline-slider-wrapper">
+                        <input type="range" id="timeline-slider" min="0" max="100" value="0">
+                        <div class="timeline-progress-bar" id="timeline-progress"></div>
+                    </div>
+                    <span class="time-label" id="total-duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Right Visual & Volume Settings -->
+            <div class="player-right">
+                <button class="action-btn-player active-tab-btn" data-tab-target="visualizer" title="Xem Sóng Nhạc">
+                    <i class="fa-solid fa-wave-square"></i>
+                </button>
+                <button class="action-btn-player" id="action-lyrics-btn" title="Bật Lời Bài Hát">
+                    <i class="fa-solid fa-quote-right"></i>
+                </button>
+                <div class="volume-container">
+                    <button class="volume-btn" id="volume-icon-btn"><i class="fa-solid fa-volume-high"></i></button>
+                    <div class="volume-slider-wrapper">
+                        <input type="range" id="volume-slider" min="0" max="100" value="80">
+                        <div class="volume-progress-bar" id="volume-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- GLOBAL MODALS & DIALOGS -->
+        <!-- Add to Playlist Modal -->
+        <div class="modal-overlay hidden" id="add-to-playlist-modal">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h3>Thêm vào danh sách phát</h3>
+                    <button class="close-modal-btn" id="close-add-playlist-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-description">Chọn danh sách phát mà bạn muốn thêm bài hát **<span id="modal-song-name">Tên Bài</span>**:</p>
+                    <div class="modal-playlists-list" id="modal-playlists-container">
+                        <!-- JS will list playlists -->
+                    </div>
+                    <div class="modal-create-row">
+                        <input type="text" id="modal-new-playlist-input" placeholder="Tên danh sách phát mới...">
+                        <button class="btn-primary" id="modal-create-playlist-btn">Tạo & Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Playlist Create Dialog -->
+        <div class="modal-overlay hidden" id="create-playlist-modal">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h3>Tạo Danh Sách Phát Mới</h3>
+                    <button class="close-modal-btn" id="close-create-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="new-playlist-name-input">Tên danh sách phát</label>
+                        <input type="text" id="new-playlist-name-input" placeholder="Nhập tên ví dụ: Nhạc Chill Buổi Sáng, Học Tập...">
+                    </div>
+                    <button class="btn-primary btn-full-width" id="confirm-create-playlist-btn">Xác nhận tạo</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HIDDEN AUDIO ENGINE ELEMENT -->
+        <audio id="audio-engine"></audio>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
