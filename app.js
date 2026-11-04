@@ -9,7 +9,7 @@ const trackList = [
         title: "Neon Drive",
         artist: "Hyperion",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        cover: "assets/images/synthwave.png",
+        cover: "synthwave.png",
         genre: "Synthwave",
         duration: "06:12",
         lyrics: [
@@ -34,7 +34,7 @@ const trackList = [
         title: "Cyberpunk City",
         artist: "GridLock",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-        cover: "assets/images/cyberpunk.png",
+        cover: "cyberpunk.png",
         genre: "Cyberpunk",
         duration: "05:44",
         lyrics: [
@@ -58,7 +58,7 @@ const trackList = [
         title: "Late Night Coffee",
         artist: "Chilly Kitten",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-        cover: "assets/images/lofi.png",
+        cover: "lofi.png",
         genre: "Lofi Hip Hop",
         duration: "05:53",
         lyrics: [
@@ -82,7 +82,7 @@ const trackList = [
         title: "Starlight Voyage",
         artist: "Cosmo",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-        cover: "assets/images/synthwave.png",
+        cover: "synthwave.png",
         genre: "Space Ambient",
         duration: "07:18",
         lyrics: [
@@ -102,7 +102,7 @@ const trackList = [
         title: "Digital Ghost",
         artist: "Spectre",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-        cover: "assets/images/cyberpunk.png",
+        cover: "cyberpunk.png",
         genre: "Techno Cyber",
         duration: "07:05",
         lyrics: [
@@ -118,7 +118,7 @@ const trackList = [
         title: "Rainy Window",
         artist: "Nostalgia",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-        cover: "assets/images/lofi.png",
+        cover: "lofi.png",
         genre: "Lofi Beat",
         duration: "05:02",
         lyrics: [
@@ -140,7 +140,7 @@ const trackList = [
         title: "Nơi Này Có Anh",
         artist: "Sơn Tùng M-TP",
         url: "assets/songs/noi-nay-co-anh.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop",
         duration: "04:12",
         lyrics: [
@@ -165,7 +165,7 @@ const trackList = [
         title: "Lạc Trôi",
         artist: "Sơn Tùng M-TP",
         url: "assets/songs/lac-troi.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop",
         duration: "04:40",
         lyrics: [
@@ -190,7 +190,7 @@ const trackList = [
         title: "Chúng Ta Của Hiện Tại",
         artist: "Sơn Tùng M-TP",
         url: "assets/songs/chung-ta-cua-hien-tai.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop",
         duration: "04:20",
         lyrics: [
@@ -214,7 +214,7 @@ const trackList = [
         title: "Muộn Rồi Mà Sao Còn",
         artist: "Sơn Tùng M-TP",
         url: "assets/songs/muon-roi-ma-sao-con.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop",
         duration: "04:05",
         lyrics: [
@@ -237,7 +237,7 @@ const trackList = [
         title: "Hãy Trao Cho Anh",
         artist: "Sơn Tùng M-TP ft. Snoop Dogg",
         url: "assets/songs/hay-trao-cho-anh.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop / Hip-Hop",
         duration: "03:58",
         lyrics: [
@@ -267,7 +267,7 @@ const trackList = [
         title: "Sóng Gió",
         artist: "Sơn Tùng M-TP ft. Jack",
         url: "assets/images/songs/song-gio.mp3",
-        cover: "assets/images/sontung.png",
+        cover: "sontung.png",
         genre: "V-Pop",
         duration: "04:22",
         lyrics: [
